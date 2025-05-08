@@ -29,10 +29,10 @@ def createPipeline():
         print(f"Error creating pipeline: {e}")
 
 def save_frames(frames_dict):
-    os.makedirs("capturas", exist_ok=True)
+    os.makedirs("images", exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     for mxid, frame in frames_dict.items():
-        filename = os.path.join("capturas", f"{mxid}_{timestamp}.jpg")
+        filename = os.path.join("images", f"{mxid}_{timestamp}.jpg")
         cv2.imwrite(filename, frame)
         print(f"Saved frame from {mxid} as {filename}")
 
